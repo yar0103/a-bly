@@ -1,26 +1,71 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container-sm">
+    <Nav />
+    <UserBar />
+    <Visual :visual="visual"/>
+    <Category :category="category" />
+    <Commend :products="products"/>
+    <Footer />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Nav from './components/Nav.vue'
+import UserBar from './components/UserBar.vue'
+import Visual from './components/Visual.vue'
+import Category from './components/Category.vue'
+import Commend from './components/Commend.vue'
+import Footer from './components/Footer.vue'
+// import LoginPage from './components/LoginPage.vue'
+
+import {products} from './data';
+import {shoppingCategory} from './data';
+import {visual} from './data';
 
 export default {
-  name: 'App',
+  name: "App",
+  data(){
+    return{
+      products: products,
+      category: shoppingCategory,
+      visual: visual,
+      // LoginPage: LoginPage
+    }
+  },
   components: {
-    HelloWorld
-  }
-}
+    Nav: Nav,
+    UserBar: UserBar,
+    Visual: Visual,
+    Category: Category,
+    Commend: Commend,
+    Footer: Footer,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.container-sm{
+  max-width: 520px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+.appGo {
+  padding: 3px 10px;
+  border-radius: 15px;
+  background: white;
+  font-weight: 600;
+  color: black;
+  letter-spacing: -2px;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 </style>
