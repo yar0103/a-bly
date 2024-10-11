@@ -8,7 +8,7 @@ const products = [
   },
   {
     image: '/commend-1.jpg',
-    discount: '47%%',
+    discount: '47%',
     price: 59900,
     market: '오카시',
     content: '따뜻한 여자 패딩자켓'

@@ -5,7 +5,7 @@
       <i class="bi bi-arrow-right flex-shrink-1"></i>
     </div>
     <div class="row row-cols-2 g-2">
-      <div class="col" v-for="(p,i) in products" :key="i">
+      <div class="col" v-for="(p,i) in formattedProducts" :key="i">
         <div class="card">
           <img
             :src="p.image"
@@ -14,7 +14,7 @@
           />
           <div class="card-body">
             <h5 class="card-title">
-              <span class="red"><b>{{p.discount}}</b></span> {{p.price}}
+              <span class="red"><b>{{p.discount}}</b></span> {{p.formattedPrice}}
             </h5>
             <p class="card-text cardTitle">{{p.market}}</p>
           </div>
@@ -32,6 +32,14 @@ export default {
   name: "Commend",
   props: {
     products: Array,
+  },
+  computed: {
+    formattedProducts() {
+      return this.products.map(product => ({
+        ...product,
+        formattedPrice: product.price.toLocaleString('ko-KR')
+      }));
+    }
   }
 };
 </script>
