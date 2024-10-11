@@ -34,6 +34,13 @@ const products = [
     market: '노이즈',
     content: '레더 미니어처 키링'
   },
+  {
+    image: '/commend-5.jpg',
+    discount: '5%',
+    price: 1963000,
+    market: 'BURBERRY',
+    content: '체크 벨티드 트렌치 코트'
+  },
 ]
 
 const shoppingCategory = [

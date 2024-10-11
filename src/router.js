@@ -1,10 +1,11 @@
 import { createWebHistory, createRouter } from "vue-router";
-import LoginPage from './components/LoginPage.vue';
+
+import App from './App.vue';
 
 const routes = [
 	{
-		path: "/myPage", //이경로로 접속하면
-		component: LoginPage, //이 컴포넌트를 보여줘
+		path: "/", //이경로로 접속하면
+		component: App, //이 컴포넌트를 보여줘
 	},
 ];
 
