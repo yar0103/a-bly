@@ -11,8 +11,8 @@
     </form>
   </div>
 
-  <div class="black-bg" v-if="isClickedOpenLogin">
-    <div class="white-bg container-sm">
+  <div class="black-bg" v-if="isClickedOpenLogin" @click="$emit('closeLogin')">
+    <div class="white-bg container-sm" @click.stop>
       <h1 class="loginTitle">LOGIN</h1>
       <p>Please enter your login and password!</p>
       <small
