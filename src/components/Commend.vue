@@ -1,10 +1,10 @@
 <template>
   <div class="commend container mb-2">
     <div class="d-flex justify-content-between align-items-center">
-      <h5 class="topTitle mt-2 w-100">당신을 위한 추천 상품</h5>
-      <div class="d-flex column-gap-2 fs-5">
-        <button @click="marketSort">마켓순</button>
-        <button @click="priceSort">가격순</button>
+      <h5 class="topTitle mt-2">당신을 위한 추천 상품</h5>
+      <div class="d-flex column-gap-1 fs-5">
+        <button type="button" class="btn btn-dark" @click="marketSort">마켓순</button>
+        <button type="button" class="btn btn-dark" @click="priceSort">가격순</button>
         <i class="bi bi-arrow-right flex-shrink-1"></i>
       </div>
     </div>
