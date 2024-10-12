@@ -86,14 +86,22 @@ div {
   left: 0;
   z-index: 9999;
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .white-bg {
   width: 100%;
-  height: 100%;
+  height: 70%;
   background: white;
   border-radius: 8px;
   padding: 20px;
 
+  display: flex; 
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
   text-align: center;
 }
 
