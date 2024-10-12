@@ -1,11 +1,11 @@
 <template>
   <div class="container-sm">
     <Nav />
-    <UserBar />
+    <UserBar :isClickedOpenLogin="isClickedOpenLogin" @openLogin="openLogin" />
     <Visual :visual="visual"/>
     <Category :category="category" />
     <Commend :products="products"/>
-    <Footer />
+    <Footer :isClickedOpenLogin="isClickedOpenLogin" @openLogin="openLogin" @closeLogin="closeLogin"/>
   </div>
 </template>
 
@@ -30,6 +30,7 @@ export default {
       category: shoppingCategory,
       visual: visual,
       // LoginPage: LoginPage
+      isClickedOpenLogin: false,
     }
   },
   components: {
@@ -40,6 +41,14 @@ export default {
     Commend: Commend,
     Footer: Footer,
   },
+  methods: {
+    openLogin() {
+      this.isClickedOpenLogin = true;
+    },
+    closeLogin(){
+      this.isClickedOpenLogin = false;
+    }
+  }
 };
 </script>
 

@@ -6,20 +6,23 @@
       ></a>
       <a class="navbar-brand" href="#"><i class="bi bi-list fs-5"></i></a>
       <a class="navbar-brand" href="#"><i class="bi bi-search fs-5"></i></a>
-      <a class="navbar-brand" href="#none" @click="openLogin"
+      <a class="navbar-brand" href="#none" @click="$emit('openLogin')"
         ><i class="bi bi-person-fill fs-5"></i
       ></a>
     </div>
   </nav>
 
-  <div class="black-bg" v-if="isClickedOpenLogin">
-    <div class="white-bg">
+  <div class="black-bg" v-if="isClickedOpenLogin" @click="$emit('closeLogin')" >
+    <div class="white-bg container-sm" @click.stop>
       <h1 class="loginTitle">LOGIN</h1>
       <p>Please enter your login and password!</p>
-      <small>로그인 해야만 볼 수 있는 페이지 입니다.<br /> 로그인 해 주세요 :)</small>
+      <small
+        >로그인 해야만 볼 수 있는 페이지 입니다.<br />
+        로그인 해 주세요 :)</small
+      >
       <form action="#" class="mt-4">
         <div class="input-style">
-          <label for="username">아이디</label>
+          <label for="username">ID</label>
           <input
             type="text"
             id="username"
@@ -28,7 +31,7 @@
           />
         </div>
         <div class="input-style">
-          <label for="password">비밀번호</label>
+          <label for="password">PW</label>
           <input
             type="password"
             id="password"
@@ -36,7 +39,10 @@
             required
           />
         </div>
-        <button type="submit" class="login-btn">로그인</button>
+        <div class="d-flex">
+          <button type="submit" class="login-btn me-2">로그인</button>
+          <button class="login-btn">뒤로가기</button>
+        </div>
       </form>
       <div class="links">
         <a href="#">회원가입</a> |
@@ -49,16 +55,8 @@
 <script>
 export default {
   name: "Footer",
-  data() {
-    return {
-      isClickedOpenLogin: false,
-    };
-  },
-  methods: {
-    openLogin() {
-      this.isClickedOpenLogin = true;
-      console.log(this.isClickedOpenLogin);
-    },
+  props: {
+    isClickedOpenLogin: Boolean,
   },
 };
 </script>
@@ -86,6 +84,7 @@ div {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999;
   padding: 20px;
 }
 .white-bg {
@@ -94,12 +93,13 @@ div {
   background: white;
   border-radius: 8px;
   padding: 20px;
-  z-index: 9999;
+
   text-align: center;
 }
 
 .loginTitle {
   font-weight: 900;
+  color: #007bff;
 }
 
 /* 입력 필드 */
