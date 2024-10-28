@@ -5,11 +5,11 @@
       <div class="d-flex column-gap-1 fs-5">
         <button type="button" class="btn btn-dark" @click="marketSort">마켓순</button>
         <button type="button" class="btn btn-dark" @click="priceSort">가격순</button>
-        <i class="bi bi-arrow-right flex-shrink-1"></i>
+        <i @click="test" class="bi bi-arrow-right flex-shrink-1"></i>
       </div>
     </div>
     <div class="row row-cols-2 g-2">
-      <div class="col" v-for="(p, i) in formattedProducts" :key="i">
+      <div @click="productDetail" class="col" v-for="(p, i) in formattedProducts" :key="i">
         <div class="card">
           <img :src="p.image" class="card-img-top fixedHeight" alt="..." />
           <div class="card-body">
@@ -44,6 +44,7 @@ export default {
     products: Array,
   },
   methods: {
+    //마켓이름순 정렬
     marketSort() {
       if (this.isSorted) {
         // 이미 정렬된 상태라면, 원래 순서로 복구
@@ -61,6 +62,7 @@ export default {
         this.isSorted = true;
       }
     },
+    //상품가격순 정렬
     priceSort(){
       if (this.isSorted) {
         // 이미 정렬된 상태라면, 원래 순서로 복구
@@ -77,6 +79,14 @@ export default {
         });
         this.isSorted = true;
       }
+    },
+    //상품 더보기 버튼
+    test(){
+      console.log('test');
+    },
+    //상품 상세보기
+    productDetail(){
+      console.log('detail');
     }
   },
   computed: {

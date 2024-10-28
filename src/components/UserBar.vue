@@ -14,11 +14,8 @@
   <div class="black-bg" v-if="isClickedOpenLogin" @click="$emit('closeLogin')">
     <div class="white-bg container-sm" @click.stop>
       <h1 class="loginTitle">LOGIN</h1>
-      <p>Please enter your login and password!</p>
-      <small
-        >로그인 해야만 볼 수 있는 페이지 입니다.<br />
-        로그인 해 주세요 :)</small
-      >
+      <p style="color:gray">Please enter your login and password!</p>
+      <small>로그인 해야만 볼 수 있는 페이지 입니다.</small>
       <form action="#" class="mt-4">
         <div class="input-style">
           <label for="username">ID</label>
@@ -39,8 +36,8 @@
           />
         </div>
         <div class="d-flex">
-          <button type="submit" class="login-btn me-2">로그인</button>
           <button class="login-btn">뒤로가기</button>
+          <button type="submit" class="login-btn me-2">로그인</button>
         </div>
       </form>
       <div class="links">
